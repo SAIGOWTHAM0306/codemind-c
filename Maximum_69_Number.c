@@ -1,35 +1,28 @@
 #include<stdio.h>
 int main()
 {
-    int n,r,c=0;
+    int n,d,a[100],i,j;
     scanf("%d",&n);
-    int t=n;
+    i=0;
     while(n!=0)
     {
-        r=n%10;
-        c++;
+        d=n%10;
         n=n/10;
+        a[i]=d;
+        i++;
     }
-    int tem=c;
-    int a[c];
-    while(t!=0)
+    for(j=i-1;j>=0;j--)
     {
-        r=t%10;
-        // printf("%d ",r);
-        a[c]=r;
-        c--;
-        t=t/10;
-    }
-    for(int i=1;i<=tem;i++)
-    {
-        if(a[i]==6)
         {
-            a[i]=9;
-            break;
+            if(a[j]==6)
+            {
+                a[j]=9;
+                break;
+            }
         }
     }
-    for(int i=1;i<=tem;i++)
+    for(j=i-1;j>=0;j--)
     {
-        printf("%d",a[i]);
+        printf("%d",a[j]);
     }
 }
